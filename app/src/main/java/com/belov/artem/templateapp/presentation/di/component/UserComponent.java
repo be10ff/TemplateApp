@@ -6,6 +6,7 @@ import com.belov.artem.templateapp.presentation.di.PerActivity;
 import com.belov.artem.templateapp.presentation.di.module.ActivityModule;
 import com.belov.artem.templateapp.presentation.di.module.UserModule;
 import com.belov.artem.templateapp.presentation.view.fragment.BaseFragment;
+import com.belov.artem.templateapp.presentation.view.fragment.MainFragment;
 
 import dagger.Component;
 import dagger.Module;
@@ -18,6 +19,5 @@ import dagger.Provides;
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = {ActivityModule.class, UserModule.class})
 public interface UserComponent extends ActivityComponent {
-    void inject(BaseFragment userListFragment);
-//    void inject(UserDetailsFragment userDetailsFragment);
+    void inject(MainFragment fragment);
 }

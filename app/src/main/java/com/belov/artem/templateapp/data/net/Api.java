@@ -1,17 +1,21 @@
 package com.belov.artem.templateapp.data.net;
 
-import com.belov.artem.templateapp.presentation.model.Post;
 
-import java.util.List;
-
-import retrofit2.Call;
+import com.belov.artem.templateapp.data.entity.AboutEntity;
+import com.belov.artem.templateapp.data.net.responce.ApiResponse;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
+import rx.Observable;
 
 /**
  * Created by artem on 15.12.16.
  */
 
 public interface Api {
-    @GET("/posts")
-    Call<List<Post>> getPosts();
+
+
+    @GET("/api/rest/v1/{locale}/android/rule")
+    Observable<ApiResponse<AboutEntity>> getAbout(
+            @Path("locale") String locale
+    );
 }

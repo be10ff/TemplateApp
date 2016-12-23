@@ -2,6 +2,7 @@ package com.belov.artem.templateapp.presentation.di.component;
 
 import android.content.Context;
 
+import com.belov.artem.templateapp.domain.repository.AboutRepository;
 import com.belov.artem.templateapp.presentation.di.module.ApplicationModule;
 import com.belov.artem.templateapp.presentation.view.activity.BaseActivity;
 
@@ -19,4 +20,6 @@ public interface ApplicationComponent {
     void inject(BaseActivity baseActivity);
 
     Context context();
+
+    AboutRepository aboutRepository();
 }

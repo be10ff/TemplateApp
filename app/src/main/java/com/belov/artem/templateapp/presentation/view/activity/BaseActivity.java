@@ -2,6 +2,8 @@ package com.belov.artem.templateapp.presentation.view.activity;
 
 import android.app.Application;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.belov.artem.templateapp.presentation.App;
@@ -23,7 +25,13 @@ public class BaseActivity  extends AppCompatActivity {
         return ((App)getApplication()).getApplicationComponent();
     }
 
-//    protected ActivityModule getActivityModule() {
-//        return new ActivityModule(this);
-//    }
+    protected ActivityModule getActivityModule() {
+        return new ActivityModule(this);
+    }
+
+    protected void addFragment(int containerViewId, Fragment fragment) {
+        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(containerViewId, fragment);
+        fragmentTransaction.commit();
+    }
 }

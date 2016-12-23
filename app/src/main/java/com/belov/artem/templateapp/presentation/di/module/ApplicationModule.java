@@ -3,6 +3,8 @@ package com.belov.artem.templateapp.presentation.di.module;
 import android.app.Application;
 import android.content.Context;
 
+import com.belov.artem.templateapp.data.net.repository.AboutDataRepository;
+import com.belov.artem.templateapp.domain.repository.AboutRepository;
 import com.belov.artem.templateapp.presentation.App;
 
 import javax.inject.Singleton;
@@ -27,7 +29,7 @@ public class ApplicationModule {
     @Provides
     @Singleton
     Application providesApplication() {
-        return application;
+        return this.application;
     }
 
     @Provides
@@ -36,6 +38,11 @@ public class ApplicationModule {
         return this.application;
     }
 
-    
+
+    @Provides
+    @Singleton
+    AboutRepository aboutRepository(AboutDataRepository aboutDataRepository) {
+        return aboutDataRepository;
+    }
 
 }

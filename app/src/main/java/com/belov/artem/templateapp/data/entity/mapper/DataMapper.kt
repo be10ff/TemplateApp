@@ -1,4 +1,4 @@
-package com.belov.artem.templateapp.mapper
+package com.belov.artem.templateapp.data.entity.mapper
 
 import com.belov.artem.templateapp.data.entity.StringEntity
 import com.belov.artem.templateapp.presentation.model.StringModel

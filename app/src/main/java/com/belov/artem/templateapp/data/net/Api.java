@@ -7,9 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import rx.Observable;
 
-/**
- * Created by artem on 15.12.16.
- */
 
 public interface Api {
 

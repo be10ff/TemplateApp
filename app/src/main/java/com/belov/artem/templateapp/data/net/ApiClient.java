@@ -15,14 +15,9 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by artem on 14.12.16.
- */
-
 public class ApiClient {
 
     public static final String API_URL = "https://kixx.today";
-//    public static final String API_URL = "https://api.github.com";
 
     @Inject
     Application application;

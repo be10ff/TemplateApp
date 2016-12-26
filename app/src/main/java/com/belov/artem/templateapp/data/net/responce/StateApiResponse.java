@@ -2,9 +2,6 @@ package com.belov.artem.templateapp.data.net.responce;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by sukhoterin on 17/02/16.
- */
 public class StateApiResponse {
 
     @SerializedName("total")

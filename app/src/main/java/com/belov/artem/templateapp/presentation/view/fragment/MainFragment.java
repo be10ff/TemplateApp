@@ -71,7 +71,8 @@ public class MainFragment extends BaseFragment implements AboutView, AboutViewIn
         aboutPresenter.setView(this);
 //        aboutPresenter.about();
 
-        interactor = new AboutInteractor(this);
+        interactor = new AboutInteractor();
+        interactor.setView(this);
         interactor.about();
     }
 

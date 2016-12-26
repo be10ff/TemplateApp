@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
@@ -62,4 +65,11 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.jakewharton:butterknife:8.1.0'
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
+
+    //UI Tests Espresso
+
+    //Unit tests
+//    testCompile "org.robolectric:robolectric:3.1.4"
+//    testCompile 'org.mockito:mockito-core:1.10.19'
+    androidTestCompile "org.mockito:mockito-core:1.10.19"
 }

@@ -1,4 +1,4 @@
-package com.belov.artem.templateapp.domain.interactor;
+package com.belov.artem.templateapp.presentation.interactor;
 
 
 public class DefaultSubscriber<T> extends rx.Subscriber<T> {

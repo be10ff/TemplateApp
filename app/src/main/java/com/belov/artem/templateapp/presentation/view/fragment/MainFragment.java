@@ -10,12 +10,7 @@ import android.widget.TextView;
 
 import com.belov.artem.templateapp.R;
 import com.belov.artem.templateapp.data.entity.AboutEntity;
-import com.belov.artem.templateapp.presentation.di.component.DaggerUserComponent;
-import com.belov.artem.templateapp.presentation.di.component.UserComponent;
 import com.belov.artem.templateapp.presentation.interactor.AboutInteractor;
-import com.belov.artem.templateapp.presentation.model.AboutModel;
-import com.belov.artem.templateapp.presentation.presenter.AboutPresenter;
-import com.belov.artem.templateapp.presentation.view.AboutView;
 import com.belov.artem.templateapp.presentation.view.AboutViewInt;
 
 import javax.inject.Inject;
@@ -27,13 +22,10 @@ import butterknife.ButterKnife;
  * Created by artem on 22.12.16.
  */
 
-public class MainFragment extends BaseFragment implements AboutView, AboutViewInt {
+public class MainFragment extends BaseFragment implements AboutViewInt {
 
     @BindView(R.id.tvResponce)
     TextView tvResponce;
-
-    @Inject
-    AboutPresenter aboutPresenter;
 
     AboutInteractor interactor;
 
@@ -50,35 +42,20 @@ public class MainFragment extends BaseFragment implements AboutView, AboutViewIn
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        UserComponent aboutComponent = DaggerUserComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(getActivityModule())
-                .build();
-
-        aboutComponent.inject(this);
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        aboutPresenter.destroy();
         interactor.destroy();
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        aboutPresenter.setView(this);
-//        aboutPresenter.about();
-
         interactor = new AboutInteractor();
         interactor.setView(this);
         interactor.about();
-    }
-
-    @Override
-    public void onAbout(AboutModel model) {
-        tvResponce.setText(model.text);
     }
 
     @Override

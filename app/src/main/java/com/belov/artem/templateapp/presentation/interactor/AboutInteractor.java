@@ -6,7 +6,6 @@ import com.belov.artem.templateapp.data.entity.AboutEntity;
 import com.belov.artem.templateapp.data.net.ApiClient;
 import com.belov.artem.templateapp.data.net.responce.ApiResponse;
 
-import com.belov.artem.templateapp.domain.interactor.DefaultSubscriber;
 import com.belov.artem.templateapp.presentation.view.AboutViewInt;
 
 import rx.Subscription;
